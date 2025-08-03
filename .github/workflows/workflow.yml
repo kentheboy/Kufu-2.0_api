@@ -22,6 +22,7 @@ jobs:
 
       - name: Update Lambda Function
         run: |
+          npm install
           npm run deploy
           
       - name: Slack-Notification
