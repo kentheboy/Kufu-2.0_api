@@ -1,0 +1,8 @@
+{
+  "name": "Kufu-2.0_api",
+  "version": "2.0.0",
+  "description": "Khufu-2.0 project API for AWS Lambda using Claudia.js",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
