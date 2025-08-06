@@ -12,10 +12,9 @@ const rdsDataClient = new RDSDataClient({ region: "ap-northeast-1" });
  */
 async function executeSql(sql, parameters) {
   const params = {
-    resourceArn: "arn:aws:rds:ap-northeast-1:471029525890:cluster:khufu-v2", // ARN of your Aurora cluster
-    secretArn:
-      "arn:aws:secretsmanager:ap-northeast-1:471029525890:secret:rds!cluster-cd4cb6f6-6cb5-4546-8aa2-e118e7493962-OZnVrD", // ARN of your database secret in Secrets Manager
-    database: "khufu_db_v2",
+    resourceArn: process.env.AWS_RESOURCES_ARN, // ARN of your Aurora cluster
+    secretArn: process.env.AWS_SECRET_ACCESS_KEY, // ARN of your database secret in Secrets Manager
+    database: process.env.DB_NAME, // Database name
     sql: sql,
     parameters: parameters, // Optional: array of parameters for prepared statements
   };
