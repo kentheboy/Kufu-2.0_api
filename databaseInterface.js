@@ -31,6 +31,6 @@ if (process.env.ENV === "local") {
 
 } else {
   // For AWS Lambda, use RDS Data API
-  const db = require("./databaseInterface");
+  const db = require("./awsRdsInterface");
   module.exports = { executeSql: db.executeSql };
 }
