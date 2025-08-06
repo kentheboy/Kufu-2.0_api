@@ -2,7 +2,7 @@ const {
   RDSDataClient,
   ExecuteStatementCommand,
 } = require("@aws-sdk/client-rds-data");
-const rdsDataClient = new RDSDataClient({ region: "ap-northeast-1" });
+const rdsDataClient = new RDSDataClient({ region: process.env.AWS_REGION });
 
 /**
  * Executes a query using the connection pool.
