@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const testRouter = Router();
+const db = require('../databaseInterface');
 // endpoint to get all posts
 testRouter.get('/hello', (req, res) => {
   res.json({
@@ -10,4 +11,11 @@ testRouter.get('/hello', (req, res) => {
     }
   });
 });
+
+testRouter.get('/test', async(req, res) => {
+  var posts = await db.executeSql('SELECT * FROM products', []);
+  console.log(posts);
+  res.json(posts);
+});
+
 module.exports = testRouter;
